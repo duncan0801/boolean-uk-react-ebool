@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom"
 
-function ProductDetail({productList}) {
+function ProductDetail({productList, basket, addItemToBasket}) {
 
     const {id} = useParams()
     console.log(id)
-   
+    
 
     const selectedProduct = productList.find((product) => {
+        console.log(productList)
         return product.id == Number(id)
     })
     
@@ -22,7 +23,11 @@ function ProductDetail({productList}) {
             <p>{selectedProduct.description}</p>
             <p>£{selectedProduct.price}</p>
             {/* <!-- Once you click in this button, the user should be redirected to the Basket page --> */}
-            <button>Add to basket</button>
+            <button onClick={() => addItemToBasket({
+                title: selectedProduct.title,
+                image: selectedProduct.image,
+                price: selectedProduct.price
+            })}>Add to basket</button>
             </div>
         </section>
 

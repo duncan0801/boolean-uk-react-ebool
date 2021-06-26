@@ -25,7 +25,6 @@ function ProductsPage({productList}) {
             <section className="products-container main-wrapper">
                 <ul className="products-container__list">
                     {productList.map((product)=> {  
-                        console.log(product)
                         return (
                             <li>
                                 <Product

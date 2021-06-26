@@ -17,6 +17,8 @@ function App() {
         <Route path="/product:id" exact>
           <ProductDetail
           productList={productList}
+          basket={basket}
+          addItemToBasket={addItemToBasket}
           />
         </Route>
         <Route path="/" exact>
@@ -25,7 +27,9 @@ function App() {
           />
         </Route>
         <Route path="/basket" exact>
-          <BasketPage/>
+          <BasketPage
+          basket={basket}
+          />
         </Route>
       </Switch>
     </>

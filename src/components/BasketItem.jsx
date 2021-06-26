@@ -1,12 +1,12 @@
-function BasketItem() {
+function BasketItem({basketItem}) {
     return (
         <article class="basket-container__item">
                     <img
-                        src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-                        alt="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+                        src={basketItem.image}
+                        alt={basketItem.title}
                         width="90"
                     />
-                    <p>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</p>
+                    <p>{basketItem.title}</p>
                     <p>
                         Qty:
                         <select
@@ -17,7 +17,7 @@ function BasketItem() {
                         >
                     </p>
                     {/* <!-- The item total is calculated using the Qty selected value --> */}
-                    <p>Item total: £109.95</p>
+                    <p>Item total: £{basketItem.price.toFixed(2)}</p>
                     </article>
     )
 }
