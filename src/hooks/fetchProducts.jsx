@@ -8,6 +8,7 @@ function useFetchProducts() {
             .then(response => response.json())
             .then(setProductsList)
     }, [setProductsList])
+
     
     return productsList
 }

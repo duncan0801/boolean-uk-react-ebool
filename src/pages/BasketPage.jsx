@@ -1,6 +1,6 @@
 import BasketItem from "../components/BasketItem"
 
-function BasketPage({basket}) {
+function BasketPage({basket, handleQuantityChange}) {
     return (
         <main>
             <section class="basket-container">
@@ -13,6 +13,8 @@ function BasketPage({basket}) {
                                 <BasketItem
                                 key={index}
                                 basketItem={basketItem}
+                                basket={basket}
+                                handleQuantityChange={handleQuantityChange}
                                 />
                             </li>
                         )

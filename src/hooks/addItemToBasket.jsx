@@ -21,6 +21,11 @@ function useAddItemToBasket() {
         setBasket([...basket, item])
     }
 
-    return {basket, addItemToBasket}
+    function handleQuantityChange(event, itemIndex) {
+        setBasket([...basket, {...basket[itemIndex], quantity : event.target.value}])
+        console.log([...basket, {...basket[itemIndex], quantity : event.target.value}])
+    }
+
+    return {basket, addItemToBasket, handleQuantityChange}
 }
 export default useAddItemToBasket
