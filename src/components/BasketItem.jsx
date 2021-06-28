@@ -10,7 +10,11 @@ function BasketItem({basketItem, basket, handleQuantityChange}) {
                     <p>{basketItem.title}</p>
                     <p>
                         Qty:
-                        <select value={basket[itemIndex].quantity} onChange={(event) => handleQuantityChange(event, itemIndex)}>
+                        <select value={basketItem.quantity} onChange={(event) => {
+                            const quantity = event.target.value
+                            handleQuantityChange(quantity, basketItem.id)
+                        }
+                        }>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>

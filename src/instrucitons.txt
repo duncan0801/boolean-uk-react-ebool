@@ -17,4 +17,5 @@ Challenge
 
 TODO:
 1. Ask about updating the basket quantity immutably
+2. Loading Part
 2. Ask about prettier
